@@ -1,3 +1,5 @@
+import styles from '../style.css'
+
 let i = 0
 let maxCount = 4;
 const loop = () => {
