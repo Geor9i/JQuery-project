@@ -1,0 +1,56 @@
+@import "../partials/flex";
+@import "../partials/effects";
+
+$width: 50vh;
+$max-width: 500px;
+$height: calc($width * (297mm / 210mm));
+$radius: calc($width / 24);
+$display-size: 35%;
+$keyboard-size: calc(100% - $display-size);
+$padding: 0.75em;
+$button-color:hsl(0deg, 0%, 35%);
+$symbol-color: hsl(0deg, 0%, 100%);
+
+.calculator {
+    border: 1px solid black;
+    width: $width;
+    max-width: $max-width;
+    height: $height;
+    border-radius: $radius;
+    overflow: hidden;
+    @include flex(column, $AI: stretch);
+    background-color: hsl(0deg 0% 95%);
+}
+
+.calculator-screen {
+    flex: 0 0 $display-size;
+    border: 1px solid black;
+    @include flex;
+}
+
+.calculator-keyboard {
+    padding: $padding;
+    flex: 0 0 $keyboard-size;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.25em;
+}
+
+.calculator-ui-button {
+    @include flex();
+    @include transition(background-color);
+    @include box-shadow(0 0 0px 1px black);
+    background-color: $button-color;
+    color: $symbol-color;
+    border-radius: 13px;
+    cursor: pointer;
+    p {
+        font-size: 2em;
+    }
+    &:hover {
+        color: mix($symbol-color, hsl(219, 66%, 47%));
+        background-color: darken($button-color, 20);
+    }
+}
+
+
