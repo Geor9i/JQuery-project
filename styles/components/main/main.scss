@@ -1,0 +1,29 @@
+@import "variables";
+
+@mixin warning {
+  background-color: orange;
+  color: #fff;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 60vh;
+    gap: 2em;
+  }
+  
+  .box {
+    border-radius: 13px;
+    border: 2px solid black;
+    width: 100px;
+    aspect-ratio: 1;
+    background-color: $text-color;
+    @include warning();
+  }
+  
+  .box:nth-child(odd) {
+    background-color: green;
+  }
+  

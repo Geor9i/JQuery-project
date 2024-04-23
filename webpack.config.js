@@ -10,7 +10,6 @@ module.exports = {
     filename: "[name].js",
     chunkFilename: "[id].[chunkhash].js",
     path: path.resolve(__dirname, "dist"),
-    // publicPath: "/dist/", // Optional: sets the base path for all the assets within your application
   },
   devServer: {
     port: 9000,
@@ -19,6 +18,7 @@ module.exports = {
     },
     compress: true,
     open: true,
+    hot: true, // Enable HMR
     historyApiFallback: {
       index: "/",
       disableDotRule: true,
@@ -27,9 +27,7 @@ module.exports = {
   devtool: "eval-source-map",
   resolve : {
     alias: {
-      // bind version of jquery-ui
       "jquery-ui": "jquery-ui/dist/jquery-ui.js",      
-      // bind to modules;
       modules: path.join(__dirname, "node_modules"),
     }
   },
@@ -73,6 +71,7 @@ module.exports = {
       "jQuery":"jquery",
       "window.jQuery":"jquery"
     }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   optimization: {
     splitChunks: {
