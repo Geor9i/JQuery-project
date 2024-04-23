@@ -32,6 +32,11 @@ module.exports = {
         use: ["style-loader", "css-loader"],
       },
       {
+        test: /\.scss$/,
+        exclude: /node_modules/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
+      {
         test: /\.(eat|svg|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
       },

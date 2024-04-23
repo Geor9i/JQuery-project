@@ -1,4 +1,4 @@
-import styles from '../style.css'
+import styles from '../styles/site.scss'
 
 let i = 0
 let maxCount = 4;
