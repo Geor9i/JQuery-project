@@ -8,8 +8,8 @@ body, table, input {
     font: inherit;
 }
 
-@for $i from 1 through 6 {
+@for $i from 6 through 1 {
     h#{$i} {
-        font-size: 0.5em * calc($i + 1);
+        font-size: 5px * ($i + 1);
     }
 }
