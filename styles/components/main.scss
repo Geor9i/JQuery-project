@@ -1,0 +1,27 @@
+@import "../partials/box";
+@import "../partials/_fonts.scss";
+@import "../partials//responsive";
+
+@include google-font("Roboto Condensed");
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 60vh;
+  gap: 2em;
+}
+
+.box {
+  @include box(100px, 13px, yellow);
+  @include box-shadow(0 0 5px black, 5px 5px 3px red, 10px -10px 3px blue, 20px 20px 3px violet);
+  p {
+    font-family: "Roboto Condensed";
+    font-size: 22px;
+  }
+}
+
+.box:nth-child(odd) {
+  background-color: green;
+}

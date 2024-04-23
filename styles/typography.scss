@@ -7,3 +7,9 @@ html {
 body, table, input {
     font: inherit;
 }
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-size: 0.5em * calc($i + 1);
+    }
+}
