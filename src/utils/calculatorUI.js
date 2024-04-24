@@ -1,5 +1,4 @@
-import { CALC_BUTTONS } from "../constants/calculatorButtons.js";
-
+import { CALC_BUTTONS, CALC_ICONS } from "../constants/calculatorButtons.js";
 export default class CalculatorUI {
   constructor() {}
 
@@ -11,7 +10,13 @@ export default class CalculatorUI {
     };
 
     if (buttons.hasOwnProperty(calculatorMode)) {
-        return buttons[calculatorMode];
+        return buttons[calculatorMode].map(entry => {
+          if (Array.isArray(entry)) {
+            return entry.map(symbol => CALC_ICONS[symbol] || symbol)
+          } else {
+            return CALC_ICONS[entry] || entry;
+          }
+        });
     }
     throw new Error(`${calculatorMode} mode is unrecognised!`)
   }
