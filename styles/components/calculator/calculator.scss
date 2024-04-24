@@ -1,5 +1,6 @@
-@import "../partials/flex";
-@import "../partials/effects";
+@import "../../partials/flex";
+@import "../../partials/effects";
+@import "./screen.scss";
 
 $width: 50vh;
 $max-width: 500px;
@@ -25,7 +26,7 @@ $symbol-color: hsl(0deg, 0%, 100%);
 .calculator-screen {
     flex: 0 0 $display-size;
     border: 1px solid black;
-    @include flex;
+    @include grid($rows: 15% 1fr 20%);
 }
 
 .calculator-keyboard {

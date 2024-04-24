@@ -1,0 +1,63 @@
+@import "../../partials/flex";
+@import "../../partials/box";
+
+.calculator-screen nav {
+    @include flex($JC: space-between);
+    padding: 0 1em;
+    ul {
+        @include rect(100%);
+        @include flex;
+        .menu {
+            flex: 1 0 40%;
+            @include flex($JC: flex-start);
+            gap: 1em;
+            .menu-btn {
+                cursor: pointer;
+                background: linear-gradient(
+                    180deg,
+                    rgba(0, 0, 0, 1) 0%,
+                    rgba(0, 0, 0, 1) 10%,
+                    rgba(255, 255, 255, 0) 10%,
+                    rgba(245, 245, 245, 0) 45%,
+                    rgba(0, 0, 0, 1) 45%,
+                    rgba(0, 0, 0, 1) 55%,
+                    rgba(255, 255, 255, 0) 55%,
+                    rgba(240, 240, 240, 0) 90%,
+                    rgba(0, 0, 0, 1) 95%,
+                    rgba(0, 0, 0, 1) 100%
+                );
+                @include rect(20px, 15px);
+            }
+            .mode-name {
+                font-size: 1em;
+                font-weight: bold
+            }
+        }
+        .history {
+            @include rect(30px);
+            background-color: blue;
+            border-radius: 13px
+        }
+    }
+}
+
+.calculator-screen .display {
+    @include flex;
+}
+
+.calculator-screen .memory {
+    @include flex($JC:space-around, $AI: stretch);
+    .calculator-memory-button {
+        flex: 1 0;
+        @include flex;
+        @include transition;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover {
+            color: white;
+            background-color: black;
+        }
+    
+    }
+    }
+

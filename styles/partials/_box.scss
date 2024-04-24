@@ -1,5 +1,10 @@
 @import "effects";
 
+@mixin rect($width, $heigth: $width) {
+  width: $width;
+  height: $heigth;
+}
+
 @mixin box($size: 100px, $bRadius: 13px, $body-color: black) {
     display: flex;
     justify-content: center;

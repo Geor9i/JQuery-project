@@ -7,6 +7,7 @@ export default class CalculatorUI {
     const buttons = {
       default: CALC_BUTTONS.default,
       scientific: CALC_BUTTONS.scientific,
+      memory: CALC_BUTTONS.memory,
     };
 
     if (buttons.hasOwnProperty(calculatorMode)) {
