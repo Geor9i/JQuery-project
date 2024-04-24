@@ -3,7 +3,7 @@ export const CALC_BUTTONS = {
   default: {
     keys: [
       ["%", "CE", "C", "del"],
-      ["1/x", "x2", "sqrt", "/"],
+      ["¹⁄x", "x²", "sqrt", "/"],
       ["7", "8", "9", "x"],
       ["4", "5", "6", "-"],
       ["1", "2", "3", "+"],
@@ -13,11 +13,11 @@ export const CALC_BUTTONS = {
   },
   scientific: {
     keys: [
-      ["2nd", "pi", "e", "C", "del"],
-      ["X2", "1/x", "| x |", "exp", "mod"],
+      ["2ⁿᵈ", "𝝅", "e", "C", "del"],
+      ["x²", "¹⁄x", "| x |", "exp", "mod"],
       ["sqrt", "(", ")", "n!", "/"],
-      ["xy", "7", "8", "9", "x"],
-      ["10x", "4", "5", "6", "-"],
+      ["xʸ", "7", "8", "9", "x"],
+      ["10ˣ", "4", "5", "6", "-"],
       ["log", "1", "2", "3", "+"],
       ["ln", "+/-", "0", ".", "="],
     ],
@@ -33,14 +33,7 @@ export const CALC_ICONS = {
   "*": "fa-solid fa-xmark",
   "+": "fa-solid fa-plus",
   "-": "fa-solid fa-minus",
-  pi: "𝝅",
-  e: "e",
-  x2: "x²",
-  x3: "x³",
-  "1/x": "¹⁄x",
   "+/-": "fa-solid fa-plus-minus",
-  xy: "xʸ",
-  "10x": "10ˣ",
-  "2nd": "2ⁿᵈ",
   "=": "fa-solid fa-equals",
+  x3: "x³",
 };

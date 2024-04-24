@@ -9,7 +9,7 @@ $radius: calc($width / 24);
 $display-size: 35%;
 $keyboard-size: calc(100% - $display-size);
 $padding: 0.75em;
-$button-color:hsl(0deg, 0%, 35%);
+$button-color: hsl(0deg, 0%, 35%);
 $symbol-color: hsl(0deg, 0%, 100%);
 
 .calculator {
@@ -53,5 +53,3 @@ $symbol-color: hsl(0deg, 0%, 100%);
         background-color: darken($button-color, 20);
     }
 }
-
-

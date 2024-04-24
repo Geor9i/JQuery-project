@@ -64,7 +64,11 @@
                         i {
                             color: black
                         }
+                        &.selected-mode i {
+                            color: rgb(0, 87, 248);
+                        }
                     }
+                    
                 }
             }
            

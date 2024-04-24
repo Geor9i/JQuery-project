@@ -38,6 +38,7 @@ export default class Calculator {
     }
       this.mode = menuOption ?? this.mode;
       this.buttons = this.calculatorUI.getButtons(this.mode);
+      this.menu.activeMenu = this.mode;
       this.changeLayout();
 
     Array.from(this.keyboard.children).forEach(child => child.remove());
