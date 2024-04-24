@@ -2,7 +2,7 @@ import styles from "../styles/site.scss";
 import "jquery";
 import "jquery-ui";
 import Decimal from "decimal.js";
-import Calculator from "./components/calculator.js";
+import Calculator from "./components/calculator/calculator.js";
 
 
 if (module.hot) {

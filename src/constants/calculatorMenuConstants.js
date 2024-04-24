@@ -1,0 +1,1 @@
+export const MENU_OPTIONS = [{name: 'default', icon: "fa-solid fa-calculator fa-2x"}, {name: 'scientific', icon: "fa-solid fa-flask fa-2x"}];

@@ -1,5 +1,7 @@
+
+
 export const CALC_BUTTONS = {
-    "memory": ["MC", "MR", "M+", "M-", "MS", "M^"],
+    "memory": ["MC", "MR", "M+", "M-", "MS", "M⌄"],
     "default": [
         ["%", "CE", "C", "del"],
         ["1/x", "x2", "sqrt", "/"],

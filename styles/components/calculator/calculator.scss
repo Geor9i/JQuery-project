@@ -13,6 +13,7 @@ $button-color:hsl(0deg, 0%, 35%);
 $symbol-color: hsl(0deg, 0%, 100%);
 
 .calculator {
+    position: relative;
     border: 1px solid black;
     width: $width;
     max-width: $max-width;

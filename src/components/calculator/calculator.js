@@ -1,7 +1,9 @@
-import UtilInjector from "../utils/utilInjector.js";
+import UtilInjector from "../../utils/utilInjector.js";
+import CalculatorMenu from "./calculatorMenu.js";
 
 export default class Calculator {
   constructor() {
+    this.menu = new CalculatorMenu();
     this.element = document.querySelector(".calculator");
     this.keyboard = document.querySelector(".calculator-keyboard");
     this.memorySection = this.element.querySelector(

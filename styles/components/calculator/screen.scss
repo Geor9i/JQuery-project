@@ -1,10 +1,10 @@
 @import "../../partials/flex";
 @import "../../partials/box";
 
-.calculator-screen nav {
+.calculator-screen > nav {
     @include flex($JC: space-between);
     padding: 0 1em;
-    ul {
+    > ul {
         @include rect(100%);
         @include flex;
         .menu {
@@ -32,6 +32,42 @@
                 font-size: 1em;
                 font-weight: bold
             }
+            .calculator-menu {
+                top: 5%; left: 0; bottom: 0;
+                position: absolute;
+                z-index: 10;
+                border-radius: 13px;
+                width: 70%;
+                @include flex;
+                @include box-shadow(0 10px 10px 5px rgba(0,0,0,0.4));
+                background-color: hsl(0deg, 0%, 95%);
+                > ul {
+                    @include rect(100%);
+                    @include flex(column, flex-start, flex-start);
+                    padding: 2em 0;
+                    font-weight: bold;
+                    gap: 0.5em;
+                    list-style: none;
+                    li {
+                        @include flex($JC: flex-start);
+                        gap: 1em;
+                        width: 100%;
+                        text-transform: capitalize;
+                        padding: 0.5em 2em;
+                        cursor: pointer;
+                        &:hover {
+                            background-color: hsl(0, 0%, 85%);
+                            i {
+                                color: rgb(0, 87, 248);
+                            }
+                        }
+                        i {
+                            color: black
+                        }
+                    }
+                }
+            }
+           
         }
         .history {
             @include rect(30px);
