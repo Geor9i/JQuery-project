@@ -1,7 +1,11 @@
 import { MENU_OPTIONS } from "../../constants/calculatorMenuConstants.js";
+import UtilInjector from "../../utils/utilInjector.js";
 
 export default class CalculatorMenu {
   constructor() {
+    this.eventUtil = UtilInjector.event;
+    this.evenBus = UtilInjector.eventBus;
+    this.eventId = "CalculatorMenu";
     this.element = document.querySelector(".calculator .menu");
     this.menuButton = this.element.querySelector(".menu-btn");
     this.menu = null;
@@ -27,6 +31,17 @@ export default class CalculatorMenu {
             $(this.menu).remove();
             this.menuOpen = false;
         });
+        $(this.menu).on('click', (e) => {
+            const selector = `.calculator .menu .calculator-menu ul li`;
+            let parents = this.eventUtil.getRelatives(e).parents;
+            let element = e.target.matches(selector) ? e.target : parents.find(parent => parent.matches(selector));
+            if (element) {
+                let option = $(element).text();
+                this.evenBus.emit('menuSelect', option);
+                $(this.menu).remove();
+                this.menuOpen = false;
+            }
+        })
     }
   }
   _createMenu() {

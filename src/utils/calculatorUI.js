@@ -1,23 +1,26 @@
 import { CALC_BUTTONS, CALC_ICONS } from "../constants/calculatorButtons.js";
 export default class CalculatorUI {
-  constructor() {}
+  constructor() {
+    this.buttonSets = {...CALC_BUTTONS};
+    this.icons = {...CALC_ICONS};
+  }
 
   getButtons(calculatorMode) {
-    const buttons = {
-      default: CALC_BUTTONS.default,
-      scientific: CALC_BUTTONS.scientific,
-      memory: CALC_BUTTONS.memory,
-    };
-
-    if (buttons.hasOwnProperty(calculatorMode)) {
-        return buttons[calculatorMode].map(entry => {
+    if (this.buttonSets.hasOwnProperty(calculatorMode)) {
+        return this.buttonSets[calculatorMode].keys.map(entry => {
           if (Array.isArray(entry)) {
-            return entry.map(symbol => CALC_ICONS[symbol] || symbol)
+            return entry.map(symbol => this.icons[symbol] || symbol)
           } else {
-            return CALC_ICONS[entry] || entry;
+            return this.icons[entry] || entry;
           }
         });
     }
     throw new Error(`${calculatorMode} mode is unrecognised!`)
+  }
+
+  getCols(calculatorMode) {
+    if (this.buttonSets.hasOwnProperty(calculatorMode)) {
+      return this.buttonSets[calculatorMode].cols;
+    }
   }
 }
