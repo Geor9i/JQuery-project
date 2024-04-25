@@ -24,6 +24,8 @@ export default class Calculator {
     this.arrangeKeys = this._arrangeKeys.bind(this);
     this.init();
   }
+
+  
   init() {
     this.eventBus.on('menuSelect', this.subscriberId, (data) => {
       this.arrangeKeys(data);

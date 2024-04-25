@@ -29,6 +29,7 @@
   "dependencies": {
     "jquery": "^3.7.1",
     "jquery-ui": "^1.13.2",
+    "mathjax": "^3.2.2",
     "mathjs": "^12.4.2"
   }
 }
