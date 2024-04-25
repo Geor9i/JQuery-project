@@ -5,6 +5,7 @@ constructor() {
     this.eventBus = UtilInjector.eventBus;
     this.eventId = "CalculatroDisplay";
     this.element = document.querySelector(".calculator .calculator-screen");
+    this.input = this.element.querySelector("textarea"); 
     this.calculationHandler = this._calculationHandler.bind(this);
     this.init();
 }
@@ -14,6 +15,7 @@ init() {
 }
 
     _calculationHandler(data) {
+        this.input.value += data
         console.log('data: ', data);
     }
 

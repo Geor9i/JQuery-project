@@ -56,8 +56,6 @@ export default class KeyFunctions {
     let results = {};
     Object.keys(patterns).forEach(pattern => results[pattern] = patterns[pattern].test(symbol));
     console.log(results);
-
-
     return symbol
   }
 }
