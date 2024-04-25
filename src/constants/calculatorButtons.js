@@ -13,7 +13,7 @@ export const CALC_BUTTONS = {
   },
   scientific: {
     keys: [
-      ["2ⁿᵈ", "𝝅", "e", "C", "del"],
+      ["2nd", "𝝅", "e", "C", "del"],
       ["²", "1/x", "| x |", "exp", "mod"],
       ["sqrt", "(", ")", "n!", "/"],
       ["ʸ", "7", "8", "9", "*"],
@@ -38,6 +38,8 @@ export const CALC_ICONS = {
   "³": "x³",
   "²": "x²",
   "ʸ": "xʸ",
-  "1/x": "¹⁄ₓ"
+  "1/x": "¹⁄ₓ",
+  "2nd": "2ⁿᵈ",
 };
 
+export const KEYBOARD_KEYS = ["Control","Tab", "Alt", "Shift", "Meta", "AltGraph", "ContextMenu", "ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown", "Enter", "NumLock", "ScrollLock", "Pause", "Insert", "Home", "Insert", "Backspace", "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12", "Delete", "PageDown", "PageUp", "CapsLock"]

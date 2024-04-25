@@ -1,3 +1,4 @@
+import { KEYBOARD_KEYS } from "../../constants/calculatorButtons.js";
 import UtilInjector from "../../utils/utilInjector.js";
 
 export default class KeyFunctions {
@@ -6,6 +7,8 @@ export default class KeyFunctions {
     this.eventUtil = UtilInjector.event;
     this.element = document.querySelector(".calculator-keyboard");
     this.buttonHandler = this._buttonHandler.bind(this);
+    this.keyboardKey = null;
+    this.onKeyUp = this._onKeyUp.bind(this);
     this.init();
   }
 
@@ -15,7 +18,6 @@ export default class KeyFunctions {
   }
 
   _buttonHandler(e) {
-    e.preventDefault();
     let symbol;
     if (e.type === "click") {
       const selector = ".calculator-keyboard .calculator-ui-button";
@@ -27,11 +29,26 @@ export default class KeyFunctions {
         symbol = button.dataset.symbol;
       }
     } else if (e.type === "keydown") {
+      const keyboardPattern = new RegExp(KEYBOARD_KEYS.join('|'));
       symbol = e.key;
+      if (keyboardPattern.test(symbol)) {
+        this.keyboardKey = symbol;
+        document.addEventListener('keyup', this.onKeyUp);
+      } 
+      if(!this.keyboardKey){
+        e.preventDefault()
+      }
     }
-    if (this.isSafe(symbol)) {
+    if (this.isSafe(symbol) && !this.keyboardKey) {
         const command = this.getButtonFunction(symbol);
         this.eventBus.emit("keyFunction", command);
+    }
+  }
+
+  _onKeyUp(e) {
+    if (this.keyboardKey && this.keyboardKey === e.key) {
+      this.keyboardKey = null;
+      document.removeEventListener('keyup', this.onKeyUp);
     }
   }
 
@@ -47,11 +64,11 @@ export default class KeyFunctions {
       variable: /[a-zA-Z]+/,
       number: /[0-9]+/,
       variableSuperscript: /[ᵃᵇᶜᵈᶠᵍʰⁱʲᵏˡᵐⁿᵒᵓᵖʳˢᵗᵘᵛʷˣʸᶻ]+/,
-      nonVariableSuperscript: /ᵉ|ᵖⁱ/,
+      constantsSuperscript: /ᵉ|ᵖⁱ/,
       exponents: /[⁰¹²³⁴⁵⁶⁷⁸⁹]+/,
       constants: /e|PI|pi|Pi/,
       calcFunctions: /CE|C/,
-      operators: /sqrt|log|mod|\+|\-|\/|\*|×|%|=|~|\(|\)|1\/x/
+      operators: /sqrt|log|mod|\+|\-|\/|\*|×|%|=|~|\(|\)|1\/x/,
     }
     let results = {};
     Object.keys(patterns).forEach(pattern => results[pattern] = patterns[pattern].test(symbol));

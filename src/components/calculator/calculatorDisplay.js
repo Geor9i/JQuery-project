@@ -15,8 +15,8 @@ init() {
 }
 
     _calculationHandler(data) {
-        this.input.value += data
-        console.log('data: ', data);
+        this.input.value = data
+        // console.log('data: ', data);
     }
 
 }
