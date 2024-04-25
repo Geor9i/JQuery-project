@@ -27,8 +27,8 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
-    "decimal.js": "^10.4.3",
     "jquery": "^3.7.1",
-    "jquery-ui": "^1.13.2"
+    "jquery-ui": "^1.13.2",
+    "mathjs": "^12.4.2"
   }
 }
