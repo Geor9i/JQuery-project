@@ -11,11 +11,23 @@ constructor() {
 }
 
 init() {
+    mathjax({
+        options: {
+          input: TeX(),
+          output: CHTML()
+        }
+      }).then((MathJax) => {
+        console.log('MathJax initialized');
+      }).catch((err) => {
+        console.error('Error initializing MathJax:', err);
+      });
+    
+
     this.eventBus.on("keyFunction", this.eventId, this.calculationHandler);
 }
 
     _calculationHandler(data) {
-        this.input.value = data
+        this.input.value += data
     }
 
 }
